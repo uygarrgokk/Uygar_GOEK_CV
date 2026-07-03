@@ -214,8 +214,8 @@ a {
 }
 
 .avatar-circle {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     background: var(--accent);
     overflow: hidden;
@@ -429,6 +429,23 @@ a {
 }
 
 /* ── Education ── */
+.education .section__heading {
+    padding: 12px 0 16px;
+}
+
+.education .edu-grid {
+    margin-top: 20px;
+    position: relative;
+}
+
+.education .edu-grid::before {
+    top: 52px;
+}
+
+.education .edu-card::before {
+    margin: 44px auto 20px;
+}
+
 .edu-grid {
     margin-top: 48px;
     position: relative;
@@ -501,36 +518,99 @@ a {
     aspect-ratio: 356 / 241;
 }
 
+.project-card__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+}
+
 .project-card__image {
     width: 100%;
     height: 100%;
     background: var(--card-bg);
     border-radius: 11px;
+    transition: transform 0.25s ease;
+    overflow: hidden;
 }
 
-.project-card--featured .project-card__overlay {
+.project-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card__image--rag {
+    background: linear-gradient(135deg, #2d1b4e 0%, #8428f8 100%);
+}
+
+.project-card__image--wordl {
+    background: linear-gradient(135deg, #1a3a2a 0%, #6aaa64 100%);
+}
+
+.project-card__image--crawler {
+    background: linear-gradient(135deg, #1e3a5f 0%, #3776ab 100%);
+}
+
+.project-card__image--cyber {
+    background: linear-gradient(135deg, #141c3a 0%, #535e88 100%);
+}
+
+.project-card__image--c {
+    background: linear-gradient(135deg, #3d3d3d 0%, #7a7a7a 100%);
+}
+
+.project-card__image--cv {
+    background: linear-gradient(135deg, #5a1fa8 0%, #8428f8 100%);
+}
+
+.project-card__overlay {
     position: absolute;
     inset: 0;
-    background: rgba(132, 40, 248, 0.9);
+    background: rgba(20, 28, 58, 0.88);
     border-radius: 11px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 24px;
     color: var(--white);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-card:hover .project-card__overlay,
+.project-card:focus-within .project-card__overlay {
+    opacity: 1;
+}
+
+.project-card:hover .project-card__image,
+.project-card:focus-within .project-card__image {
+    transform: scale(1.03);
 }
 
 .project-card__title {
     font-weight: 800;
-    font-size: 26px;
-    line-height: 30px;
-    margin-bottom: 8px;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.project-card__tag {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    opacity: 0.9;
 }
 
 .project-card__text {
-    font-size: 17px;
-    line-height: 30px;
-    max-width: 235px;
+    font-size: 15px;
+    line-height: 1.45;
+    max-width: 100%;
 }
 
 /* ── Download ── */
